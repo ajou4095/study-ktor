@@ -33,3 +33,14 @@ jobs:
           source: "./build/libs/*.jar"
           target: "/home/ubuntu/deploy"
           strip_components: 2
+
+      - name: Execute Server Init Script
+        uses: appleboy/ssh-action@master
+        with:
+          username: ubuntu
+          host: ${{ secrets.HOST }}
+          key: ${{ secrets.PRIVATE_KEY }}
+          script_stop: true
+          script: |
+            killall java
+            nohup java -jar deploy/study\ ktor-all.jar &
