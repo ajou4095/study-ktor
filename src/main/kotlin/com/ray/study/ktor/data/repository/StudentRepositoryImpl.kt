@@ -1,8 +1,9 @@
 package com.ray.study.ktor.data.repository
 
 import com.ray.study.ktor.domain.model.Student
+import com.ray.study.ktor.domain.repository.StudentRepository
 
-class StudentRepository {
+class StudentRepositoryImpl : StudentRepository {
     private val students: List<Student> = listOf(
         Student(
             id = "0",
@@ -41,11 +42,11 @@ class StudentRepository {
         ),
     )
 
-    fun getStudent(id: String): Student? {
+    override suspend fun getStudentById(id: String): Student? {
         return students.find { it.id == id }
     }
 
-    fun getStudentList(): List<Student> {
+    override suspend fun getStudentList(): List<Student> {
         return students
     }
 }
