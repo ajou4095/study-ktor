@@ -43,4 +43,4 @@ jobs:
           script_stop: true
           script: |
             killall java
-            nohup java -jar deploy/study\ ktor-all.jar &
+            nohup java -jar deploy/study\ ktor-all.jar 1> /dev/null 2>&1 &
