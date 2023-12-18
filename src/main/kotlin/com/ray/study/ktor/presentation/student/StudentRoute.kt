@@ -11,14 +11,5 @@ fun Route.studentRouting(
         get("{id?}") {
             service.onGetStudentCall(this)
         }
-//        get {
-//
-//        }
-//        post {
-//
-//        }
-//        delete("{id?}") {
-//
-//        }
     }
 }
