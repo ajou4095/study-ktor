@@ -4,7 +4,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Student(
-    val id: String,
+    val id: Long,
     val name: String,
     val age: Int,
 )

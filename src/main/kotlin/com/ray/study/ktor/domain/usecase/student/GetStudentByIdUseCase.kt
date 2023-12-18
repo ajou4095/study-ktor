@@ -13,7 +13,7 @@ class GetStudentByIdUseCase(
     private val studentRepository: StudentRepository
 ) {
     suspend operator fun invoke(
-        id: String
+        id: Long
     ): Student? {
         return studentRepository.getStudentById(id)
     }

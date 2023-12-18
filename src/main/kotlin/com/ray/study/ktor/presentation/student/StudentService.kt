@@ -25,7 +25,9 @@ class StudentService(
             status = HttpStatusCode.BadRequest
         )
 
-        val student = getStudentByIdUseCase(id = id) ?: return call.respondText(
+        val student = id.toLongOrNull()?.let {
+            getStudentByIdUseCase(id = it)
+        } ?: return call.respondText(
             "No student with id $id",
             status = HttpStatusCode.NotFound
         )
