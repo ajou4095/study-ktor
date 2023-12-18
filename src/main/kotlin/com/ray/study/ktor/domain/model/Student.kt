@@ -1,4 +1,4 @@
-package com.ray.models
+package com.ray.study.ktor.domain.model
 
 import kotlinx.serialization.Serializable
 

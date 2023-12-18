@@ -1,6 +1,6 @@
-package com.ray
+package com.ray.study.ktor.
 
-import com.ray.plugins.*
+import com.ray.study.ktor.plugins.configureRouting
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import io.ktor.http.*

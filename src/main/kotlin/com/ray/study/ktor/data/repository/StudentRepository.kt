@@ -1,6 +1,6 @@
-package com.ray.repository
+package com.ray.study.ktor.data.repository
 
-import com.ray.models.Student
+import com.ray.study.ktor.domain.model.Student
 
 class StudentRepository {
     private val students: List<Student> = listOf(
