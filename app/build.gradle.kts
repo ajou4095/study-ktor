@@ -29,10 +29,10 @@ sentry {
 }
 
 dependencies {
-//    implementation(project(":common"))
-//    implementation(project(":data"))
-//    implementation(project(":domain"))
-//    implementation(project(":presentation"))
+    implementation(project(":common"))
+    implementation(project(":data"))
+    implementation(project(":domain"))
+    implementation(project(":presentation"))
 
     implementation(libs.bundles.kotlin)
     implementation(libs.bundles.presentation)

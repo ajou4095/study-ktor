@@ -19,7 +19,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "template"
 include(":app")
-//include(":common")
-//include(":presentation")
-//include(":domain")
-//include(":data")
+include(":common")
+include(":presentation")
+include(":domain")
+include(":data")
