@@ -39,8 +39,8 @@ jobs:
           username: ubuntu
           host: ${{ secrets.HOST }}
           key: ${{ secrets.PRIVATE_KEY }}
-          source: "./build/libs/*.jar"
-          target: "/home/ubuntu/deploy"
+          source: "./app/build/libs/*.jar"
+          target: "/home/ubuntu/deploy/study-ktor"
           strip_components: 2
 
       - name: Execute Server Init Script
@@ -53,7 +53,7 @@ jobs:
           script: |
             killall java
             cd deploy/study-ktor
-            nohup java -jar study-ktor-all.jar 1> /dev/null 2>&1 &
+            nohup java -jar libs/app-all.jar 1> /dev/null 2>&1 &
 
       - name: Update GitHub Deployment Status
         if: always()
