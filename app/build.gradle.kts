@@ -1,4 +1,5 @@
 plugins {
+    application
     kotlin("jvm")
     kotlin("kapt")
     kotlin("plugin.serialization")
@@ -11,22 +12,23 @@ group = "com.ray.study.ktor"
 version = libs.versions.versionname.get()
 
 application {
-    mainClass.set("com.ray.study.ktor.ApplicationKt")
+    mainModule = "com.ray.study.ktor"
+    mainClass = "com.ray.study.ktor.ApplicationKt"
 
     val isDevelopment: Boolean = project.ext.has("development")
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
 }
 
-sentry {
-    // Generates a JVM (Java, Kotlin, etc.) source bundle and uploads your source code to Sentry.
-    // This enables source context, allowing you to see your source
-    // code as part of your stack traces in Sentry.
-    includeSourceContext = true
-
-    org = "ray-pi"
-    projectName = "ktor"
-    authToken = System.getenv("SENTRY_AUTH_TOKEN")
-}
+//sentry {
+//    // Generates a JVM (Java, Kotlin, etc.) source bundle and uploads your source code to Sentry.
+//    // This enables source context, allowing you to see your source
+//    // code as part of your stack traces in Sentry.
+//    includeSourceContext = true
+//
+//    org = "ray-pi"
+//    projectName = "ktor"
+//    authToken = System.getenv("SENTRY_AUTH_TOKEN")
+//}
 
 dependencies {
     implementation(project(":common"))
