@@ -1,12 +1,14 @@
 package com.ray.study.ktor.data.source.local
 
+import com.ray.study.ktor.data.source.local.student.StudentTable
 import kotlinx.coroutines.Dispatchers
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils
 import org.jetbrains.exposed.sql.transactions.experimental.newSuspendedTransaction
 import org.jetbrains.exposed.sql.transactions.transaction
+import javax.inject.Inject
 
-class RayDatabase(
+class RayDatabase @Inject constructor(
     private val studentTable: StudentTable
 ) {
     init {

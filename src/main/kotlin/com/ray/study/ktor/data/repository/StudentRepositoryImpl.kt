@@ -3,8 +3,9 @@ package com.ray.study.ktor.data.repository
 import com.ray.study.ktor.data.source.local.student.StudentDao
 import com.ray.study.ktor.domain.model.Student
 import com.ray.study.ktor.domain.repository.StudentRepository
+import javax.inject.Inject
 
-class StudentRepositoryImpl(
+class StudentRepositoryImpl @Inject constructor(
     private val studentDao: StudentDao
 ) : StudentRepository {
     override suspend fun getStudentById(id: Long): Student? {

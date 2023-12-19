@@ -1,6 +1,5 @@
 package com.ray.study.ktor
 
-import com.ray.study.ktor.plugins.configureKoin
 import com.ray.study.ktor.plugins.configureRouting
 import com.ray.study.ktor.plugins.configureSerialization
 import io.ktor.server.application.Application
@@ -17,7 +16,6 @@ fun main() {
 }
 
 fun Application.module() {
-    configureKoin()
     configureSerialization()
     configureRouting()
 }

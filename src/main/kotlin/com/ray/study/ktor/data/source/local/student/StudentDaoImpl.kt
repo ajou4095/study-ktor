@@ -2,13 +2,13 @@ package com.ray.study.ktor.data.source.local.student
 
 import com.ray.study.ktor.data.model.StudentEntity
 import com.ray.study.ktor.data.source.local.RayDatabase
-import com.ray.study.ktor.data.source.local.StudentTable
 import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.selectAll
+import javax.inject.Inject
 
-class StudentDaoImpl(
+class StudentDaoImpl @Inject constructor(
     private val database: RayDatabase,
     private val studentTable: StudentTable
 ) : StudentDao {

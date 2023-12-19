@@ -1,8 +1,10 @@
-package com.ray.study.ktor.data.source.local
+package com.ray.study.ktor.data.source.local.student
 
 import org.jetbrains.exposed.sql.Table
+import javax.inject.Inject
 
-class StudentTable : Table() {
+class StudentTable @Inject constructor() : Table() {
+
     val id = long("id").autoIncrement()
 
     val name = varchar("name", 128)

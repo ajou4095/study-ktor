@@ -2,14 +2,9 @@ package com.ray.study.ktor.domain.usecase.student
 
 import com.ray.study.ktor.domain.model.Student
 import com.ray.study.ktor.domain.repository.StudentRepository
-import com.ray.study.ktor.presentation.student.StudentService
-import org.koin.dsl.module
+import javax.inject.Inject
 
-internal val getStudentByIdUseCaseModule = module {
-    factory { GetStudentByIdUseCase(get()) }
-}
-
-class GetStudentByIdUseCase(
+class GetStudentByIdUseCase @Inject constructor(
     private val studentRepository: StudentRepository
 ) {
     suspend operator fun invoke(

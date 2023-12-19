@@ -8,13 +8,9 @@ import io.ktor.server.application.call
 import io.ktor.server.response.respond
 import io.ktor.server.response.respondText
 import io.ktor.util.pipeline.PipelineContext
-import org.koin.dsl.module
+import javax.inject.Inject
 
-val studentModule = module {
-    single { StudentService(get(), get()) }
-}
-
-class StudentService(
+class StudentService @Inject constructor(
     private val getStudentByIdUseCase: GetStudentByIdUseCase,
     private val getStudentListUseCase: GetStudentListUseCase
 ) {
