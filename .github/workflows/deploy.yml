@@ -52,7 +52,8 @@ jobs:
           script_stop: true
           script: |
             killall java
-            nohup java -jar deploy/study\ ktor-all.jar 1> /dev/null 2>&1 &
+            cd deploy/study-ktor
+            nohup java -jar study-ktor-all.jar 1> /dev/null 2>&1 &
 
       - name: Update GitHub Deployment Status
         if: always()
